@@ -1,34 +1,71 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdarg.h>
 
 /**
- * _printf - Produce output according to a format.
- * @format: A character string.
- * @...: A variable.
- *
- * Return: The number of characters printed.
- */
+* _printf - Produce the output according to a format.
+* @format: A character string.
+* @...: A variable
+*
+* Return: The number of characters printed.
+*/
 
 int _printf(const char *format, ...)
 {
-	va_list prints;
-	int p;
+	int char_print = 0;
+	va_list arguments;
 
-	va_start(prints, format);
-	p = vfprintf(stdout, format, prints);
+	if (format == NULL)
+	{
+		return (-1);
+	}
 
-	va_end(prints);
+	va_start(arguments, format);
 
-	return (p);
+	while (*format)
+	{
+		if (*format != '%')
+		{
+			write(1, format, 1);
+			char_print++;
+		}
+		else
+		{
+			format++;
+			if (*format == '\0')
+			{
+				break;
+			}
+			if (*format == '%')
+			{
+				write(1, format, 1);
+				char_print++;
+			}
+
+			else if (*format == 'c')
+			{
+				char c = va_arg(arguments, int);
+				write(1, &c, 1);
+				char_print++;
+			}
+
+			else if (*format == 's')
+			{
+				char *str = va_arg(arguments, char*);
+				int str_len = 0;
+				
+			while (str[str_len] != '\0')
+			{
+				str_len++;
+
+				write(1, str, str_len);
+				char_print += str_len;
+			}
+			format++;
+			}
+
+
+			va_end(arguments);
+
+			return (char_print);
+		}
+	}
 }
-
-
-int main()
-{
-	char w[] = "hello";
-	char i = '1';
-
-	_printf("%c", i);
-	_printf("%s", w);
-
