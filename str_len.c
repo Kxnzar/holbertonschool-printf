@@ -11,7 +11,10 @@ int _strlen(char *str)
 {
 	int i;
 
-	for (i = 0; str[i] != 0; i++);
+	for (i = 0; str[i] != 0; i++)
+	{
+		/* Do nothing */
+	}
 
 	return (i);
 }
@@ -27,7 +30,10 @@ int _strlenc(const char *str)
 {
 	int i;
 
-	for (i = 0; str[i] != 0; i++);
+	for (i = 0; str[i] != 0; i++)
+	{
+		/* Do nothing */
+	}
 
 	return (i);
 }
