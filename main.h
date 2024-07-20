@@ -1,10 +1,28 @@
 #ifndef PRINT_F
 #define PRINT_F
+
+/* ======= LIBRARIES ======= */
+
 #include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+/* ======= STRUCTURES ====== */
+
+/**
+ * struct ptr - parameters and functions struct
+ * @c: parameter indicator
+ * @f: parameter function
+ */
+typedef struct ptr
+{
+	char *c;
+	int (*f)(char *, int, va_list);
+} ptr_ch;
+
+/* ======= FUNCTION PROTOTYPES ======= */
 
 int _printf(const char *format, ...);
 int _putchar(char c);

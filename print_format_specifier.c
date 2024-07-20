@@ -6,7 +6,7 @@
  * Return: 1
  */
 
-int __print_format_specifier(void)
+int _print_format_specifier(void)
 {
 	_putchar('%');
 	return (1);
