@@ -28,7 +28,14 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == 's')
 			{
-				count += _print_string(args);
+				char *s = va_arg(args, char *);
+				while (*s != '\0')
+				{
+					write(1, s, 1);
+					s++;
+					count++;
+				}
+				
 			}
 			else if (format[i] == '%')
 			{
