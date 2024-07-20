@@ -66,7 +66,7 @@ int int_size(int n)
  * @r: number max
  * @mul: multiplies
  * @m: pointer
- * 
+ *
  * Return: Nothing
  */
 void parse_int(int n, int r, int mul, int *m)
