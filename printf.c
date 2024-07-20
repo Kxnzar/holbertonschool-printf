@@ -1,49 +1,39 @@
 #include "main.h"
 
 /**
-<<<<<<< HEAD
- * _printf - Printf function
- * @format: A character string
- *
- * Return: The number of character printed.
- */
-=======
-* _printf - Same with printf function
-* @format: string to replace %s, %c etc...
-* Return: Always size of output
+* _printf - printf like function
+* @format: string parameter
+* @...: args parameter
+*
+* Return: number of characters
 */
->>>>>>> Gabriel
+
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int ss = 0;
-	int (*execute_operator)(va_list);
-	int size = 0;
+	va_list a;
+	int len = 0, i = 0;
+	int totalLength = 0;
 
-	char currChar;
-	char nextChar;
-
-	if (!format || (format[0] == '%' && strlen(format) == 1))
+	if (!format)
 		return (-1);
 
-	va_start(args, format);
+	for (; format[len]; len++)
+		;
 
-	while (format[ss])
+	va_start(a, format);
+
+	for (; i < len; i++)
 	{
-		currChar = format[ss];
-		nextChar = format[ss += 1];
-		execute_operator = get_operator(nextChar);
-
-		if (currChar != '%' || !nextChar || !execute_operator)
+		if (format[i] == '%')
 		{
-			size += _putchar(currChar);
-			if (currChar == '%' && nextChar == '%')
-				ss += 1;
-			continue;
+			if (format[i + 1])
+				totalLength += _find_type(format[i + 1], a);
+			i++;
 		}
-		size += execute_operator(args);
-		ss += 1;
+		else
+			totalLength += _putchar(format[i]);
 	}
-	va_end(args);
-	return (size);
+	if (totalLength == 0)
+		return (-1);
+	return (totalLength);
 }

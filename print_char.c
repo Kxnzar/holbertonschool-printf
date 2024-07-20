@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _print_char - check the code
- * @arg: va_list
- * Return: Size of char.
- */
+* _print_char - prints a character
+* @arg: va_list parameter
+*
+* Return: The number of character printed
+*/
+
 int _print_char(va_list arg)
 {
-	char c = va_arg(arg, int);
-
-	return (_putchar(c));
+	return (_putchar((char) va_arg(arg, int)));
 }
