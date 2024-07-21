@@ -1,53 +1,39 @@
 #include "main.h"
 
 /**
- * _printf - Printf function
- * @format: A character string
- *
- * Return: The number of character printed.
- */
+* _printf - printf like function
+* @format: string parameter
+* @...: args parameter
+*
+* Return: number of characters
+*/
 
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int i = 0;
-	int count = 0;
+	va_list a;
+	int len = 0, i = 0;
+	int totalLength = 0;
 
-	va_start(args, format);
-
-	if (format == NULL)
+	if (!format)
 		return (-1);
 
-	while (format[i] != '\0')
+	for (; format[len]; len++)
+		;
+
+	va_start(a, format);
+
+	for (; i < len; i++)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1])
+				totalLength += _find_type(format[i + 1], a);
 			i++;
-			if (format[i] == 'c')
-			{
-				count += _putchar(va_arg(args, int));
-			}
-			else if (format[i] == 's')
-			{
-				count += _print_string(args);
-			}
-			else if (format[i] == '%')
-			{
-				count += _putchar('%');
-			}
-			else
-			{
-				count += _putchar('%');
-				count += _putchar(format[i]);
-			}
 		}
 		else
-		{
-			count += _putchar(format[i]);
-		}
-		i++;
+			totalLength += _putchar(format[i]);
 	}
-
-	va_end(args);
-	return (count);
+	if (totalLength == 0)
+		return (-1);
+	return (totalLength);
 }
