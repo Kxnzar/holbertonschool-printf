@@ -54,7 +54,7 @@ int int_size(int n)
 
 	int i = 0;
 
-	for (; n > 1; i++)
+	for (n > 1; i++)
 		n /= 10;
 
 	return (i - 1);
