@@ -1,56 +1,68 @@
-PRINTF(1)               Custom Made Printf Manual              PRINTF(1)
+PRINTF(1)   Custom Made Printf Manual   PRINTF(1)
 
 .SH NAME
-       printf - format and print data
+    rintf - format and print data
 
 .SH SYNOPSIS
-       #include "main.h"
+    #include "main.h"
 
-       int (*get_print(char format))(va_list);
+        int (*get_print(char format))(va_list);
 
-       int print_char(va_list args);
-       int print_string(va_list args);
-       int print_mod(va_list args);
-       int print_int(va_list args);
-       int print_reverse(va_list args);
-       int print_decimal(va list args);
-       int print_int_min(va list args);
-       int print_float(va list args);
-       int print_NULL(va_list args);
-       int _printf(const char *format, ...);
+        int print_char(va_list args);
+        int print_string(va_list args);
+        int print_mod(va_list args);
+        int print_int(va_list args);
+        int print_reverse(va_list args);
+        int print_decimal(va list args);
+        int print_int_min(va list args);
+        int print_float(va list args);
+        int print_NULL(va_list args);
+        int _printf(const char *format, ...);
 
 .SH DESCRIPTION
-       The printf("") function formats and prints data to the standard output,
-       according to the format string format.
+        .B printf("") 
+        function formats and prints data to the standard output, 
+        according to the format string format.
 
-       get_print('')  returns a function pointer to the appropriate print function
-       based on the format specifier given.
+        .B get_print('')  
+        returns a function pointer to the appropriate print function
+        based on the format specifier given.
 
-       print_char("") prints a single character.
+        .B print_char("") 
+        prints a single character.
 
-       print_string() prints a string of characters.
+        .B print_string() 
+        prints a string of characters.
 
-       print_mod() prints a percent sign ("%").
+        .B print_mod() 
+        prints a percent sign ("%").
 
-       print_int() prints an integer.
+        .B print_int() 
+        prints an integer.
 
-       print_reverse() prints a string in reverse order.
+        .B print_reverse() 
+        prints a string in reverse order.
 
-       print_decimal() prints a decimal.
+        .B print_decimal() 
+        prints a decimal.
 
-       print_int_min() print minimum integer value.
+        .B print_int_min() 
+        print minimum integer value.
 
-       print_float() prints a float.
+        .B print_float() 
+        prints a float.
 
-       print_NULL() prints NULL.
+        .B print_NULL() 
+        prints NULL.
 
-       _printf()  formats and prints data according to the format string format.
-       It supports format specifiers similar to the standard printf function.
+        .B _printf()  
+        formats and prints data according to the format string format.
+        It supports format specifiers similar to the standard printf function.
 
 .SH EXAMPLES
-       Getting the print function for a character format specifier
+        Getting the print function for a character format specifier
            int main()
-           {
+            {
                int (print_func)(va_list) = get_print('c');
                va_list args;
                char c = 'A';
@@ -62,9 +74,9 @@ PRINTF(1)               Custom Made Printf Manual              PRINTF(1)
            Output: A
 
         Example usage of print_char("") function
-            print_char('A');
-            print_char('B');
-            print_char('C');
+            print_char("A");
+            print_char("B");
+            print_char("C");
         
         Example usage of print_string function
             print_string("Hello, world!");
