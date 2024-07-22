@@ -17,12 +17,12 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 
-	for (format[len]; len++)
+	for (format[len]; len++);
 		;
 
 	va_start(a, format);
 
-	for (i < len; i++)
+	for (i < len; i++);
 	{
 		if (format[i] == '%')
 		{
