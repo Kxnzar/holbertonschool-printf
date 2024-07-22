@@ -13,7 +13,10 @@ SYNOPSIS
        int print_mod(va_list args);
        int print_int(va_list args);
        int print_reverse(va_list args);
-
+       int print_decimal(va list args);
+       int print_int_min(va list args);
+       int print_float(va list args);
+       int print_NULL(va_list args);
        int _printf(const char *format, ...);
 
 DESCRIPTION
@@ -32,6 +35,14 @@ DESCRIPTION
        print_int() prints an integer.
 
        print_reverse() prints a string in reverse order.
+
+       print_decimal() prints a decimal.
+
+       print_int_min() print minimum integer value.
+
+       print_float() prints a float.
+
+       print_NULL() prints NULL.
 
        _printf()  formats and prints data according to the format string format.
        It supports format specifiers similar to the standard printf function.
@@ -91,5 +102,3 @@ RETURN VALUE
 
 SEE ALSO
        printf(3), va_start(3), va_arg(3), va_end(3)
-MADE BY 
-       Gabriel Rivera, Kefren Santana
