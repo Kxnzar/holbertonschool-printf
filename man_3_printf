@@ -25,7 +25,7 @@ PRINTF(1) Custom Made Printf Manual PRINTF(1)
         function formats and prints data to the standard output, 
         according to the format string format.
 
-.B      get_print('') 
+.B      get_print('')
         returns a function pointer to the appropriate print function
         based on the format specifier given.
 
@@ -91,7 +91,7 @@ PRINTF(1) Custom Made Printf Manual PRINTF(1)
             print_mod(8, 0);    // Output: Error: Division by zero!
 
         Example integer value
-            int x = 42;  
+            int x = 42;
 
         Example usage of printf_int function
             printf_int(x);
@@ -115,5 +115,5 @@ PRINTF(1) Custom Made Printf Manual PRINTF(1)
 
 .SH SEE ALSO
        printf(3), va_start(3), va_arg(3), va_end(3)
-.SH MADE BY 
+.SH MADE BY
        Gabriel Rivera, Kefren Santana
