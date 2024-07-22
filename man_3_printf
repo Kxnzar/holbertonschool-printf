@@ -1,7 +1,7 @@
 PRINTF(1)   Custom Made Printf Manual   PRINTF(1)
 
 .SH NAME
-    rintf - format and print data
+    printf - format and print data
 
 .SH SYNOPSIS
     #include "main.h"
