@@ -1,14 +1,95 @@
-#include "main.h"
+PRINTF(1)                    Custom Made Printf Manual                   PRINTF(1)
 
-/**
-* _printf - Produce the output according to a format.
-* @format: A character string.
-* @...: A variable
-*
-* Return: The number of characters printed.
-*/
+NAME
+       printf - format and print data
 
-int _printf(const char *format, ...)
-{
-  
-}
+SYNOPSIS
+       #include "main.h"
+
+       int (*get_print(char format))(va_list);
+
+       int print_char(va_list args);
+       int print_string(va_list args);
+       int print_mod(va_list args);
+       int print_int(va_list args);
+       int print_reverse(va_list args);
+
+       int _printf(const char *format, ...);
+
+DESCRIPTION
+       The printf("") function formats and prints data to the standard output,
+       according to the format string format.
+
+       get_print('')  returns a function pointer to the appropriate print function
+       based on the format specifier given.
+
+       print_char("") prints a single character.
+
+       print_string() prints a string of characters.
+
+       print_mod() prints a percent sign ("%").
+
+       print_int() prints an integer.
+
+       print_reverse() prints a string in reverse order.
+
+       _printf()  formats and prints data according to the format string format.
+       It supports format specifiers similar to the standard printf function.
+
+EXAMPLES
+       Getting the print function for a character format specifier
+           int main()
+           {
+               int (print_func)(va_list) = get_print('c');
+               va_list args;
+               char c = 'A';
+               va_start(args, c);
+               print_func(args);
+               va_end(args);
+               return 0;
+           }
+           Output: A
+
+        Example usage of print_char("") function
+            print_char('A');
+            print_char('B');
+            print_char('C');
+        
+        Example usage of print_string function
+            print_string("Hello, world!");
+            print_string("This is a string.");
+            print_string("C programming is very cool!");
+        
+        Example usage of print_mod function
+            print_mod(10, 3);   // Output: 10 % 3 = 1
+            print_mod(20, 5);   // Output: 20 % 5 = 0
+            print_mod(15, 7);   // Output: 15 % 7 = 1
+            print_mod(8, 0);    // Output: Error: Division by zero!
+
+        Example integer value
+            int x = 42;  
+
+        Example usage of printf_int function
+            printf_int(x);
+        
+        Example usage of print_reverse function
+
+            print_reverse("Hello, world!");  -> Output: !dlrow ,olleH
+            print_reverse("12345");          -> Output: 54321
+            print_reverse("");               -> Output: (empty line)
+
+        Example integer value
+            int num = 42;
+            const char* str = "Hello, world!";
+        
+        Example usage of _printf function
+            _printf("Integer: %d\n", num);  // Output: Integer: 42
+            _printf("String: %s\n", str);   // Output: String: Hello, world!
+            _printf("Unsupported specifier: %f\n", 3.14);  // Output: Unsupported specifier: %f   
+RETURN VALUE
+       _printf() returns the number of characters printed.
+
+SEE ALSO
+       printf(3), va_start(3), va_arg(3), va_end(3)
+MADE BY 
+       Gabriel Rivera, Kefren Santana
