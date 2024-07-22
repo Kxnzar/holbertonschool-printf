@@ -20,7 +20,7 @@ int _find_type(char c, va_list arg)
 	int index = 0;
 	int slength = 0;
 
-	for (; list[slength].t; slength++)
+	for (list[slength].t; slength++)
 		;
 
 
