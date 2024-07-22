@@ -21,42 +21,42 @@ PRINTF(1) Custom Made Printf Manual PRINTF(1)
 
 .SH DESCRIPTION
 
-.B      printf("") 
+.B      printf("")
         function formats and prints data to the standard output, 
         according to the format string format.
 
-.B      get_print('')  
+.B      get_print('') 
         returns a function pointer to the appropriate print function
         based on the format specifier given.
 
-.B      print_char("") 
+.B      print_char("")
         prints a single character.
 
-.B      print_string() 
+.B      print_string()
         prints a string of characters.
 
-.B      print_mod() 
+.B      print_mod()
         prints a percent sign ("%").
 
-.B      print_int() 
+.B      print_int()
         prints an integer.
 
-.B      print_reverse() 
+.B      print_reverse()
         prints a string in reverse order.
 
-.B      print_decimal() 
+.B      print_decimal()
         prints a decimal.
 
-.B      print_int_min() 
+.B      print_int_min()
         print minimum integer value.
 
-.B      print_float() 
+.B      print_float()
         prints a float.
 
-.B      print_NULL() 
+.B      print_NULL()
         prints NULL.
 
-.B      _printf()  
+.B      _printf()
         formats and prints data according to the format string format.
         It supports format specifiers similar to the standard printf function.
 
